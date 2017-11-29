@@ -19,7 +19,7 @@ public SharedPreferences prefs;
 prefs = getSharedPreferences("Pref", MODE_PRIVATE);
 ```
 
-사용 메소드 정의
+#소스코드
 
 ```java
 public void checkFirstRun(){
