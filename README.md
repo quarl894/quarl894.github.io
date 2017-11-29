@@ -1,2 +1,3 @@
-# quarl894.github.io2
-test
+# YoungJung 
+
+### 개발 일기장
