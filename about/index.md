@@ -19,3 +19,7 @@ layout: page
 
 ## Interests
 Android / App / Node.js / Software Engineering
+
+## Motivation
+
+![wise](https://quarl894.github.io/assets/images/wise_saying.gif)
