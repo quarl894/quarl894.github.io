@@ -18,22 +18,23 @@ Android Project를 생성 후 배포를 하려면 반드시 개발자의 KeyStor
 ## Command로 생성
 keytool은 jdk 설치 폴더의 bin에 위치해 있기 때문에 Java를 환경변수설정으로 지정해주었다면 위치와 상관없이 command창에서 실행이 가능하지만 환경변수설정을 지정 하지 않았다면 keytool의 경로로 가서 아래의 커맨드를 입력하도록 한다.
 
-![cmd](https://github.com/quarl894.github.io/assets/posts/20171205/cmd)
+![cmd](https://quarl894.github.io/assets/posts/20171205/cmd.png)
 
-##Androud Studio에서 keystore 생성
+## Androud Studio에서 keystore 생성
 
 - build -Generate Singed APK...
-![android](https://github.com/quarl894.github.io/assets/posts/20171205/and.jpg)
+![android](https://quarl894.github.io/assets/posts/20171205/and.jpg)
 
 - Create New... (정보 입력)
-![android2](https://github.com/quarl894.github.io/assets/posts/20171205/and2.jpg)
+![android2](https://quarl894.github.io/assets/posts/20171205/and2.png)
 
 - 다음과정에서 혹시 database password를 입력하라고 나올 때가 있다.
 이 경우에는 settings-> system settings -> passwords 이동 후 변경해주면 된다.
-![android](https://github.com/quarl894.github.io/assets/posts/20171205/and3.png)
+![android](https://quarl894.github.io/assets/posts/20171205/and3.png)
 
 - Error:(65) Error: "..." is not translated in "ko" (korean) [MissingTranslation]
-build.gradle에 추가 시키면 예외처리 된다.
+
+ build.gradle에 추가 시키면 예외처리 된다.
 ```java
 android {
   lintOptions {
