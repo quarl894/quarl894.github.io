@@ -2,7 +2,7 @@
 layout: post
 # title:  "Android release APK 생성하기"
 date:   2017-11-29 20:20:00 +0900
-categories: 2018 IT trend
+categories: Android APK
 ---
 
 App을 완성해서 Goolge Play에 올리려면 APK를 만들어야 한다.
