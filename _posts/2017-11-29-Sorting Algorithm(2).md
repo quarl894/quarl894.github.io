@@ -35,7 +35,7 @@ public void mergeSort(int num[], int length) {
 
     // 왼쪽 오른쪽 배열 나눔 재귀
     mergeSort(leftNum, leftNum.length);
-    mergeSort(rightNum, leftNum.length);
+    mergeSort(rightNum, rightNum.length);
 
     merge(leftNum, rightNum, num);
 
