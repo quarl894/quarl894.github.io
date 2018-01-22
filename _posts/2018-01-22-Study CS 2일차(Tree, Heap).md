@@ -5,7 +5,7 @@ date:   2018-01-22 22:20:00 +0900
 categories: Tree, Heap
 ---
 
-## 어떤 이진트리가 이진탐색트리인지 확인하는 방법을 설명하시오.
+## 이진트리 중 이진탐색트리를 구별하는 방법을 설명하시오.
 
 이진탐색트리 : 중위순회시 나오는 원소가 오름차순임.
 
@@ -69,27 +69,27 @@ Max Heap or Min Heap을 만족해야 함.
 
 ## Heapify 과정을 설명하시오.
 
-자식노드와 비교하면서 우선순위에 따라 값을 변경한다(MaxHeap일 경우 자식이 큰 값, MinHeap일 경우 자식이 작은 값과 변경)
+자식노드와 비교하면서 우선순위에 따라 값을 변경한다(MaxHeap: 자식이 큰 값, MinHeap: 자식이 작은 값과 변경)
 
 ![heapify](https://quarl894.github.io/assets/posts/20180122/heapify.png)
 
 ```java
-	//재귀로 구현
-	private void maxHeapify(int pos) {
-			// 자식 노드가 부모노드보다 클 경우
-			if (Heap[pos] < Heap[leftChild(pos)] || Heap[pos] < Heap[rightChild(pos)]) {
-				// 자식 2개 비교 후 왼쪽 자식이 더 크면
-				if (Heap[leftChild(pos)] > Heap[rightChild(pos)]) {
-					//왼쪽 자식과 swap
-					swap(pos, leftChild(pos));
-					maxHeapify(leftChild(pos));
-					//반대는 오른쪽 자식과 swap
-				} else {
-					swap(pos, rightChild(pos));
-					maxHeapify(rightChild(pos));
-				}
-			}
+//재귀로 구현
+private void maxHeapify(int pos) {
+	// 자식 노드가 부모노드보다 클 경우
+	if (Heap[pos] < Heap[leftChild(pos)] || Heap[pos] < Heap[rightChild(pos)]) {
+		// 자식 2개 비교 후 왼쪽 자식이 더 크면
+		if (Heap[leftChild(pos)] > Heap[rightChild(pos)]) {
+			//왼쪽 자식과 swap
+			swap(pos, leftChild(pos));
+			maxHeapify(leftChild(pos));
+				/반대는 오른쪽 자식과 swap
+		} else {
+			swap(pos, rightChild(pos));
+			maxHeapify(rightChild(pos));
 		}
+	}
+}
 ```
 
 [참조 사이트](https://ratsgo.github.io/data%20structure&algorithm/2017/09/27/heapsort/)
