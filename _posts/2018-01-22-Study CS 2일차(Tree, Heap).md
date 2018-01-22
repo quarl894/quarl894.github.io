@@ -83,7 +83,7 @@ private void maxHeapify(int pos) {
 			//왼쪽 자식과 swap
 			swap(pos, leftChild(pos));
 			maxHeapify(leftChild(pos));
-				/반대는 오른쪽 자식과 swap
+			//반대는 오른쪽 자식과 swap
 		} else {
 			swap(pos, rightChild(pos));
 			maxHeapify(rightChild(pos));
