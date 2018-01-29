@@ -40,7 +40,7 @@ Index에 Hash값을 사용함으로써 모든 데이터를 살피지 않아도 �
 #### 차이점
 
 1. 동기화 보장(HashTable은 동기화 보장 / HashMap 동기화 비보장)
-2. NULl 허용(Table은 허용함 / Map 비허용)
+2. NULL 허용(Table은 허용함 / Map 비허용)
 
 #### HashMap, HashTable과 HashSet과의 차이점
 
