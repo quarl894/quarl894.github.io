@@ -8,6 +8,8 @@ layout: page
 
 - 2017.07 ~ ing :: Yapp 11기 developer
 
+- 2018.01 : Unithon 6TH 특별상 수상(NH농협, 3위)
+
 ## Links
 
 - Email : quarl894@gmail.com
