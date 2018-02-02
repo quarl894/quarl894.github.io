@@ -1,7 +1,7 @@
 ![Image](https://github.com/quarl894/Yapp_Dev/blob/master/app/src/main/res/drawable-xxhdpi/img_haru.jpg)
 # 하루소리 - 하루를 정리하는 음성일기
 
-다운로드 링크 : [하루소리](https://play.google.com/store/apps/details?id=yapp.dev_diary) <br>
+다운로드 링크 : [하루소리](http://quarl894.github.io/assets/posts/20180107/img_haru.jpg) <br>
 
 ### [설명]
 
@@ -43,5 +43,7 @@
 #### ※ 이 서비스를 개발한 사람들
 
 기획자 : 박소영
+
 디자이너 : 유호재
+
 개발자 : 김영중, 박서희, 안광호, 이경원
