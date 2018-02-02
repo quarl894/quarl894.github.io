@@ -1,7 +1,7 @@
 ![Image](https://github.com/quarl894/Yapp_Dev/blob/master/app/src/main/res/drawable-xxhdpi/img_haru.jpg)
 # 하루소리 - 하루를 정리하는 음성일기
 
-다운로드 링크 : [하루소리](http://quarl894.github.io/assets/posts/20180107/img_haru.jpg) <br>
+다운로드 링크 : [하루소리](quarl894.github.io/assets/posts/20180107/img_haru.jpg) <br>
 
 ### [설명]
 
