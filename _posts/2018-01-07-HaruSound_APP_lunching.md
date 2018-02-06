@@ -1,5 +1,12 @@
-![Image](https://github.com/quarl894/Yapp_Dev/blob/master/app/src/main/res/drawable-xxhdpi/img_haru.jpg)
-# 하루소리 - 하루를 정리하는 음성일기
+---
+layout: post
+# title:  "하루소리 - 하루를 정리하는 음성일기"
+date:   2018-01-07 20:20:00 +0900
+categories: 음성녹음, STT, APP
+tag: 구글 플레이, 런칭
+---
+
+![Image](https://quarl894.github.io/assets/posts/20180107/img_haru.jpg)
 
 다운로드 링크 : [하루소리](quarl894.github.io/assets/posts/20180107/img_haru.jpg) <br>
 
