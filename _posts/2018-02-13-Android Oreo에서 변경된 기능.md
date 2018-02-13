@@ -1,6 +1,6 @@
 ---
 layout: post
-# title:  "Android 8.0 Oreo에서 변경된 기능"
+# title:  "Android Oreo에서 변경된 기능"
 date:   2018-02-13 22:20:00 +0900
 categories: Android oreo 기술면접
 tag: Android8.0
