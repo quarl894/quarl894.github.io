@@ -14,7 +14,8 @@ InputReader에서 event 가공/전달하는 법을 알아보겠습니다.
 
 ## InputReader 동작
 
-1. 앞서 InputReader Thread를 동작시키면 loopOnce()부터 시작된다.
+##### loopOnce()
+   앞서 InputReader Thread를 동작시키면 loopOnce()부터 시작된다.
    ProcessEventsLocked으로 가공할 event 전달.
 
 ```java
@@ -39,8 +40,9 @@ void InputReader::loopOnce() {
 }
 
 ```
-2. add,remove,scan이 아닌 event들은 InputDevice로 전달
-	맞다면 해당 동작을 실행한다.
+##### processEventsLocked()
+add,remove,scan이 아닌 event들은 InputDevice로 전달
+맞다면 해당 동작을 실행한다.
 
 ```java
 void InputReader::processEventsLocked(const RawEvent* rawEvents, size_t count) {
@@ -73,8 +75,9 @@ void InputReader::processEventsForDeviceLocked(int32_t eventHubId, const RawEven
  device->process(rawEvents, count);
 }
 ```
-1. Device에 add된 Mapper에게 전달 후 각 Mapper에서 Android event로 가공
-   (Notify 통해 InputDispatcher 전달)
+##### InputDevice::process()
+Device에 add된 Mapper에게 전달 후 각 Mapper에서 Android event로 가공
+(Notify 통해 InputDispatcher 전달)
 Mapper는 addDevice할 때 addDeviceLocked()-> CreateDevice() -> addHubDevice 에서 Mapping.
 
 ```java
@@ -95,7 +98,8 @@ displayId, policyFlags, AMOTION_EVENT_ACTION_DOWN, 0, 0,metaState, mCurrentRawSt
 
 getListener()->notifyMotion(&args);
 ```
-1. mArgsQueue에 event를 넣고, NotifyKeyArgs를 InputListenerInterface에 알립니다.
+##### NotifyArgs
+mArgsQueue에 event를 넣고, NotifyKeyArgs를 InputListenerInterface에 알립니다.
 InputReader::loopOnce mQueuedListener->flush()의 마지막 호출은 mArgsQueue를 전달하게 됩니다.
 
 InputDispatcher는 InputDispatcherInterface를 상속하고
@@ -127,8 +131,9 @@ struct NotifyArgs {
     virtual void notify(const sp<InputListenerInterface>& listener) const = 0;
 };
 ```
-1. BeforeQueueing을 동작하고 inputfilter check 후 InboundQueue에 넣고
-   InputDispatcher Thread를 깨우면서 시작.
+##### InputDispatcher::notifyMotion()
+BeforeQueueing을 동작하고 inputfilter check 후 InboundQueue에 넣고
+InputDispatcher Thread를 깨우면서 시작.
 
 ```java
 void InputDispatcher::notifyMotion(const NotifyMotionArgs* args) {
