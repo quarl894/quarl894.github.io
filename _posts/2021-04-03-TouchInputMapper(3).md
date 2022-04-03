@@ -12,8 +12,7 @@ tag: Android, Input
 이번에는 Mapper들에서 어떻게 event가 가공되어 전달되는지 알아보도록 하겠습니다.
 
 ## TouchInputMapper
-결론적으로 프로세스 과정을 말씀드리면 아래와 같습니다.(아래는 Gestures 기준)
-<mark>(cookAndDispatch에서 DeviceMode에 따라 dispatchMotion까지 과정이 달라지긴 함)</mark>
+결론적으로 프로세스 과정을 말씀드리면 아래와 같습니다.(아래는 Gestures 기준)<br><mark>(cookAndDispatch에서 DeviceMode에 따라 dispatchMotion까지 과정이 달라지긴 함)</mark><br>
 Process -> sync -> processRawTouches -> cookAndDispatch -> dispatchPointerUsage -> dispatchPointerGestures ->  preparePointerGestures -> dispatchMotion -> getListener()->notifyMotion(&args);
 
 ### process
