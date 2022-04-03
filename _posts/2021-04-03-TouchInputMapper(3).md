@@ -13,7 +13,7 @@ tag: Android, Input
 
 ## TouchInputMapper
 결론적으로 프로세스 과정을 말씀드리면 아래와 같습니다.(아래는 Gestures 기준)
-==(cookAndDispatch에서 DeviceMode에 따라 dispatchMotion까지 과정이 달라지긴 함)==
+<mark>(cookAndDispatch에서 DeviceMode에 따라 dispatchMotion까지 과정이 달라지긴 함)</mark>
 Process -> sync -> processRawTouches -> cookAndDispatch -> dispatchPointerUsage -> dispatchPointerGestures ->  preparePointerGestures -> dispatchMotion -> getListener()->notifyMotion(&args);
 
 ### process

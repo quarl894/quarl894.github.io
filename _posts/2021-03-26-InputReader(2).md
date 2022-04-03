@@ -10,7 +10,7 @@ tag: Android, Input
 
 InputReader에서 event 가공/전달하는 법을 알아보겠습니다.
 
-==주요 동작은 EventHub에서 올라온 Linux event(RawEvent)를 디코딩하고 Android event code로 변환하는 과정입니다.==(입력 기기 구성, 키보드 레이아웃 파일 등...)
+<mark>주요 동작은 EventHub에서 올라온 Linux event(RawEvent)를 디코딩하고 Android event code로 변환하는 과정입니다.</mark>(입력 기기 구성, 키보드 레이아웃 파일 등...)
 
 ## InputReader 동작
 
