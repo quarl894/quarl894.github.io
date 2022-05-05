@@ -55,7 +55,7 @@ void NativeInputManager::setPointerIconType(int32_t iconId) {
 }
 ```
 
-###4. PointerController.cpp (updatePointerIcon)
+### 4. PointerController.cpp (updatePointerIcon)
 ```java
 void PointerController::updatePointerIcon(int32_t iconId) {
     std::scoped_lock lock(mLock);
@@ -63,7 +63,7 @@ void PointerController::updatePointerIcon(int32_t iconId) {
 }
 ```
 
-###5. MouseCursorController.cpp (updatePointerIcon)
+### 5. MouseCursorController.cpp (updatePointerIcon)
 ```java
 void MouseCursorController::updatePointerIcon(int32_t iconId) {
     std::scoped_lock lock(mLock);
@@ -76,7 +76,7 @@ void MouseCursorController::updatePointerIcon(int32_t iconId) {
 }
 ```
 
-###6. MouseCursorController.cpp (updatePointerLocked)
+### 6. MouseCursorController.cpp (updatePointerLocked)
 ```java
 void MouseCursorController::updatePointerLocked() REQUIRES(mLock) {
     if (!mLocked.viewport.isValid()) {
