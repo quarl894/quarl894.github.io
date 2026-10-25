@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-labelledby="title desc">
+<title id="title">성장하는 자산 그래프</title>
+<desc id="desc">막대 그래프와 동전으로 표현한 장기 투자 일러스트</desc>
+<rect width="720" height="360" rx="32" fill="#eaf2ff"/>
+<circle cx="598" cy="82" r="48" fill="#bfe9dc"/>
+<circle cx="598" cy="82" r="22" fill="#fff" opacity=".8"/>
+<path d="M82 274h548" stroke="#b8c8e3" stroke-width="4" stroke-linecap="round"/>
+<rect x="132" y="204" width="70" height="70" rx="14" fill="#9bbcff"/>
+<rect x="242" y="164" width="70" height="110" rx="14" fill="#6f9fff"/>
+<rect x="352" y="116" width="70" height="158" rx="14" fill="#3d7cf3"/>
+<rect x="462" y="64" width="70" height="210" rx="14" fill="#1b64ef"/>
+<path d="M105 168c81-26 140-18 207-64 63-43 133-15 203-86" fill="none" stroke="#18a77a" stroke-width="12" stroke-linecap="round"/>
+<path d="m498 17 18 1-5 18" fill="none" stroke="#18a77a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="146" cy="111" r="36" fill="#ffd166"/>
+<path d="M146 89v44M135 100c7-12 25-8 25 3 0 16-28 7-28 23 0 12 20 17 29 5" fill="none" stroke="#8a5a00" stroke-width="5" stroke-linecap="round"/>
+</svg>
