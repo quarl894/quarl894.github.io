@@ -12,7 +12,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.AUTO_AI_FOR_YOUNGJUNG }}
       OPENAI_MODEL: gpt-5.1
     steps:
       - uses: actions/checkout@v4
