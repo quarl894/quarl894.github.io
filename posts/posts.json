@@ -1,5 +1,32 @@
 [
   {
+    "date": "2026-10-25T23:58:18.375525+09:00",
+    "category": "절세 · 재테크 기초",
+    "categories": [
+      "절세",
+      "ETF",
+      "재테크기초"
+    ],
+    "title": "월급만으로는 불안하다면: 한국 투자자가 꼭 알아야 할 절세·현금흐름·ETF 기초 5가지",
+    "excerpt": "세금 구조를 이해하지 못한 투자는 결국 수익의 상당 부분을 세금으로 돌려줄 수 있다. 한국 거주 개인 투자자가 알아야 할 절세·현금흐름·ETF의 기본 개념을 2026년 기준으로 정리한다.",
+    "image": "/assets/images/finance-growth.svg",
+    "alt": "재테크와 자산 성장 그래프 일러스트",
+    "url": "/posts/2026-10-25-korea-tax-efficient-cashflow-and-etf-basics-2026.html"
+  },
+  {
+    "date": "2026-10-25T23:58:18.375525+09:00",
+    "category": "해외주식 · 나스닥",
+    "categories": [
+      "해외주식",
+      "투자"
+    ],
+    "title": "나스닥, 다시 고점 근처: 빅테크 실적과 연준 금리 인하 기대가 만든 ‘불편한 강세장’",
+    "excerpt": "2026년 10월 나스닥은 사상 최고치 부근을 오르내리며 빅테크 실적과 금리 인하 기대를 동시에 소화하고 있다. 지수 뒤에 숨은 이익 구조와 리스크를 구체적으로 짚어본다.",
+    "image": "/assets/images/finance-growth.svg",
+    "alt": "재테크와 자산 성장 그래프 일러스트",
+    "url": "/posts/2026-10-25-nasdaq-2026-tech-earnings-and-fed-rate-cycle.html"
+  },
+  {
     "date": "2026-10-25T14:00:00+09:00",
     "category": "나스닥 · 미국주식",
     "categories": [
