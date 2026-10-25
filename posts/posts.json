@@ -9,8 +9,8 @@
     ],
     "title": "월급만으로는 불안하다면: 한국 투자자가 꼭 알아야 할 절세·현금흐름·ETF 기초 5가지",
     "excerpt": "세금 구조를 이해하지 못한 투자는 결국 수익의 상당 부분을 세금으로 돌려줄 수 있다. 한국 거주 개인 투자자가 알아야 할 절세·현금흐름·ETF의 기본 개념을 2026년 기준으로 정리한다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "재테크와 자산 성장 그래프 일러스트",
+    "image": "/assets/images/isa-cover.jpg",
+    "alt": "ISA·연금저축·ETF를 비교하는 금융 계획 사진",
     "url": "/posts/2026-10-25-korea-tax-efficient-cashflow-and-etf-basics-2026.html"
   },
   {
@@ -22,8 +22,8 @@
     ],
     "title": "나스닥, 다시 고점 근처: 빅테크 실적과 연준 금리 인하 기대가 만든 ‘불편한 강세장’",
     "excerpt": "2026년 10월 나스닥은 사상 최고치 부근을 오르내리며 빅테크 실적과 금리 인하 기대를 동시에 소화하고 있다. 지수 뒤에 숨은 이익 구조와 리스크를 구체적으로 짚어본다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "재테크와 자산 성장 그래프 일러스트",
+    "image": "/assets/images/nasdaq-cover.jpg",
+    "alt": "나스닥 기술주 시장을 분석하는 트레이딩 데스크 사진",
     "url": "/posts/2026-10-25-nasdaq-2026-tech-earnings-and-fed-rate-cycle.html"
   },
   {
@@ -35,8 +35,8 @@
     ],
     "title": "나스닥 또 오르는데 지금 들어가도 될까? 83% 종목이 고점에서 빠진 이유",
     "excerpt": "AI 실적·시장 폭·금리 리스크를 숫자로 확인합니다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "나스닥 시장과 자산 성장 그래프 일러스트",
+    "image": "/assets/images/nasdaq-volatility-cover.jpg",
+    "alt": "나스닥 변동성과 시장 폭을 보여주는 금융 사진",
     "url": "/posts/nasdaq-analysis.html"
   },
   {
@@ -48,8 +48,8 @@
     ],
     "title": "코스피 7,000인데 삼성전자만 사면 괜찮을까? 국내주식의 진짜 위험 3가지",
     "excerpt": "반도체·실적·수급 쏠림을 숫자로 점검합니다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "국내주식 시장과 자산 성장 그래프 일러스트",
+    "image": "/assets/images/korean-stocks-cover.jpg",
+    "alt": "국내주식과 반도체 시장을 분석하는 금융 사진",
     "url": "/posts/korean-stocks-samsung.html"
   },
   {
@@ -61,8 +61,8 @@
     ],
     "title": "절약보다 먼저 줄여야 하는 고정비 5가지",
     "excerpt": "주거비·보험료·통신비처럼 반복되는 비용부터 점검합니다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "고정비를 줄이고 자산을 키우는 그래프 일러스트",
+    "image": "/assets/images/fixed-costs-cover.jpg",
+    "alt": "고정비와 월간 예산을 점검하는 생활 금융 사진",
     "url": "/posts/fixed-costs.html"
   },
   {
@@ -74,8 +74,8 @@
     ],
     "title": "ETF 3개만으로 월급 관리하는 현실적인 방법",
     "excerpt": "국내 주식·글로벌 주식·안정자산을 역할별로 나눕니다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "ETF 분산투자와 자산 성장 그래프 일러스트",
+    "image": "/assets/images/etf-cover.jpg",
+    "alt": "ETF 분산투자 계획을 세우는 금융 사진",
     "url": "/posts/three-etf-paycheck.html"
   },
   {
@@ -87,8 +87,8 @@
     ],
     "title": "연봉 5,500만 원이면 세액공제로 실제 얼마를 돌려받을까?",
     "excerpt": "연금저축 600만 원 납입을 기준으로 공제액을 계산해 봅니다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "연말정산과 세액공제 계산 일러스트",
+    "image": "/assets/images/tax-refund-cover.jpg",
+    "alt": "연봉과 세액공제를 계산하는 금융 사진",
     "url": "/posts/tax-credit-5500.html"
   },
   {
@@ -100,8 +100,8 @@
     ],
     "title": "매달 50만 원, ISA와 연금저축에 20년 넣으면… 세금 차이가 630만 원?",
     "excerpt": "ISA와 연금저축을 같은 조건의 숫자로 비교합니다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "ISA와 연금저축 자산 성장 그래프 일러스트",
+    "image": "/assets/images/retirement-cover.jpg",
+    "alt": "장기 투자와 연금저축을 상징하는 금융 사진",
     "url": "/posts/isa-vs-pension.html"
   }
 ]
