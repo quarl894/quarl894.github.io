@@ -1,0 +1,80 @@
+[
+  {
+    "date": "2026-10-25T14:00:00+09:00",
+    "category": "나스닥 · 미국주식",
+    "categories": [
+      "나스닥",
+      "투자"
+    ],
+    "title": "나스닥 또 오르는데 지금 들어가도 될까? 83% 종목이 고점에서 빠진 이유",
+    "excerpt": "AI 실적·시장 폭·금리 리스크를 숫자로 확인합니다.",
+    "image": "/assets/images/finance-growth.svg",
+    "alt": "나스닥 시장과 자산 성장 그래프 일러스트",
+    "url": "/posts/nasdaq-analysis.html"
+  },
+  {
+    "date": "2026-10-25T13:00:00+09:00",
+    "category": "국내주식 · 시장분석",
+    "categories": [
+      "국내주식",
+      "투자"
+    ],
+    "title": "코스피 7,000인데 삼성전자만 사면 괜찮을까? 국내주식의 진짜 위험 3가지",
+    "excerpt": "반도체·실적·수급 쏠림을 숫자로 점검합니다.",
+    "image": "/assets/images/finance-growth.svg",
+    "alt": "국내주식 시장과 자산 성장 그래프 일러스트",
+    "url": "/posts/korean-stocks-samsung.html"
+  },
+  {
+    "date": "2026-10-25T12:00:00+09:00",
+    "category": "현금흐름 · 절약",
+    "categories": [
+      "현금흐름",
+      "기초"
+    ],
+    "title": "절약보다 먼저 줄여야 하는 고정비 5가지",
+    "excerpt": "주거비·보험료·통신비처럼 반복되는 비용부터 점검합니다.",
+    "image": "/assets/images/finance-growth.svg",
+    "alt": "고정비를 줄이고 자산을 키우는 그래프 일러스트",
+    "url": "/posts/fixed-costs.html"
+  },
+  {
+    "date": "2026-10-25T11:00:00+09:00",
+    "category": "투자 · 월급관리",
+    "categories": [
+      "투자",
+      "현금흐름"
+    ],
+    "title": "ETF 3개만으로 월급 관리하는 현실적인 방법",
+    "excerpt": "국내 주식·글로벌 주식·안정자산을 역할별로 나눕니다.",
+    "image": "/assets/images/finance-growth.svg",
+    "alt": "ETF 분산투자와 자산 성장 그래프 일러스트",
+    "url": "/posts/three-etf-paycheck.html"
+  },
+  {
+    "date": "2026-10-25T10:00:00+09:00",
+    "category": "절세 · 연말정산",
+    "categories": [
+      "절세",
+      "기초"
+    ],
+    "title": "연봉 5,500만 원이면 세액공제로 실제 얼마를 돌려받을까?",
+    "excerpt": "연금저축 600만 원 납입을 기준으로 공제액을 계산해 봅니다.",
+    "image": "/assets/images/finance-growth.svg",
+    "alt": "연말정산과 세액공제 계산 일러스트",
+    "url": "/posts/tax-credit-5500.html"
+  },
+  {
+    "date": "2026-10-25T09:00:00+09:00",
+    "category": "절세 · 숫자비교",
+    "categories": [
+      "절세",
+      "투자"
+    ],
+    "title": "매달 50만 원, ISA와 연금저축에 20년 넣으면… 세금 차이가 630만 원?",
+    "excerpt": "ISA와 연금저축을 같은 조건의 숫자로 비교합니다.",
+    "image": "/assets/images/finance-growth.svg",
+    "alt": "ISA와 연금저축 자산 성장 그래프 일러스트",
+    "url": "/posts/isa-vs-pension.html"
+  }
+]
