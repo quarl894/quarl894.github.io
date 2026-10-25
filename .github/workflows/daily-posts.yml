@@ -16,57 +16,184 @@ jobs:
       OPENAI_MODEL: gpt-5.1
     steps:
       - uses: actions/checkout@v4
+
       - name: Generate and publish posts
         run: |
           python - <<'PY'
-          import datetime as dt, html, json, os, re, subprocess, urllib.request
+          import datetime as dt
+          import html
+          import json
+          import os
+          import re
+          import subprocess
+          import urllib.request
           from pathlib import Path
           from zoneinfo import ZoneInfo
 
           if not os.environ.get("OPENAI_API_KEY"):
-              raise SystemExit("Add OPENAI_API_KEY in repository Settings > Secrets and variables > Actions")
+              raise SystemExit("Add AUTO_AI_FOR_YOUNGJUNG in repository Settings > Secrets and variables > Actions")
+
           now = dt.datetime.now(ZoneInfo("Asia/Seoul"))
           today = now.date().isoformat()
           manifest_path = Path("posts/posts.json")
           posts = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else []
-          prompt = f'''오늘은 한국시간 {today}이다. 한국어 재테크 블로그 '부자된 아서'에 올릴 원문 게시글 3개를 JSON으로 작성하라.
-          정확히 국내주식 분석 1개, 나스닥 분석 1개, 절세·현금흐름·ETF·재테크 기초 중 1개를 만든다.
+
+          prompt = f"""오늘은 한국시간 {today}이다. 한국어 재테크 블로그 '부자된 아서'에 올릴 원문 게시글 3개를 JSON으로 작성하라.
+          정확히 국내주식 1개, 나스닥 1개, 기타 재테크 1개를 만든다.
+          각 게시글의 bucket은 반드시 domestic, nasdaq, other 중 하나로 지정한다.
+          기타 재테크는 절세·현금흐름·ETF·재테크 기초 중 하나를 선택한다.
           최신 숫자는 공식 자료를 우선하고, 기준일·핵심 숫자·위험요인·참고 링크·투자 권유가 아니라는 고지를 포함한다.
           자극적인 제목은 가능하지만 확정 수익 약속과 과장은 금지한다. 다른 블로그 문장을 복사하지 않는다.
-          body_html에는 p,h2,h3,strong,ul,li,table,thead,tbody,tr,th,td,blockquote,a만 사용하고 script/style/iframe/form/event 속성은 금지한다.
-          JSON 객체 하나만 반환한다: {{"posts":[{{"slug":"english-slug","category":"국내주식 · 시장분석","categories":["국내주식","투자"],"title":"제목","excerpt":"두 문장 이내 요약","body_html":"<p>...</p>","sources":["https://..."]}}]}}'''
-          payload = json.dumps({"model": os.environ.get("OPENAI_MODEL", "gpt-5.1"), "input": prompt}).encode()
-          req = urllib.request.Request("https://api.openai.com/v1/responses", data=payload, headers={"Authorization":"Bearer "+os.environ["OPENAI_API_KEY"],"Content-Type":"application/json"})
+          body_html에는 p,h2,h3,strong,ul,li,table,thead,tbody,tr,th,td,blockquote,a만 사용하고 script/style/iframe/form과 onclick 등 이벤트 속성은 금지한다.
+          JSON 객체 하나만 반환한다:
+          {{"posts":[{{"bucket":"domestic","slug":"english-slug","category":"국내주식 · 시장분석","categories":["국내주식","투자"],"title":"제목","excerpt":"두 문장 이내 요약","body_html":"<p>...</p>","sources":["https://..."]}}]}}"""
+
+          payload = json.dumps({
+              "model": os.environ.get("OPENAI_MODEL", "gpt-5.1"),
+              "input": prompt
+          }).encode()
+
+          req = urllib.request.Request(
+              "https://api.openai.com/v1/responses",
+              data=payload,
+              headers={
+                  "Authorization": "Bearer " + os.environ["OPENAI_API_KEY"],
+                  "Content-Type": "application/json"
+              }
+          )
           with urllib.request.urlopen(req, timeout=180) as resp:
               data = json.loads(resp.read().decode())
+
           text = data.get("output_text", "")
           if not text:
-              text = "".join(part.get("text", "") for item in data.get("output", []) for part in item.get("content", []) if part.get("type") in ("output_text", "text"))
-          text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text.strip(), flags=re.S)
+              text = "".join(
+                  part.get("text", "")
+                  for item in data.get("output", [])
+                  for part in item.get("content", [])
+                  if part.get("type") in ("output_text", "text")
+              )
+          text = re.sub(r"^\s*```(?:json)?\s*|\s*```\s*$", "", text.strip(), flags=re.S)
           generated = json.loads(text).get("posts", [])
-          existing = {(p.get("date", "")[:10], p.get("category", "")) for p in posts}
+
+          def bucket_for(item):
+              declared = str(item.get("bucket", "")).strip().lower()
+              if declared in {"domestic", "nasdaq", "other"}:
+                  return declared
+              categories = " ".join(str(x) for x in item.get("categories", []))
+              category = str(item.get("category", ""))
+              haystack = categories + " " + category
+              if "국내주식" in haystack:
+                  return "domestic"
+              if "나스닥" in haystack or "미국주식" in haystack:
+                  return "nasdaq"
+              return "other"
+
+          def cover_for(item, selected):
+              categories = " ".join(str(x) for x in item.get("categories", []))
+              category = str(item.get("category", ""))
+              haystack = categories + " " + category
+              if "국내주식" in haystack:
+                  candidates = [
+                      ("/assets/images/korean-stocks-cover.jpg", "국내주식과 반도체 시장을 분석하는 금융 사진")
+                  ]
+              elif "나스닥" in haystack or "미국주식" in haystack:
+                  candidates = [
+                      ("/assets/images/nasdaq-cover.jpg", "나스닥 기술주 시장을 분석하는 트레이딩 데스크 사진"),
+                      ("/assets/images/nasdaq-volatility-cover.jpg", "나스닥 변동성과 시장 폭을 보여주는 금융 사진")
+                  ]
+              elif "ETF" in haystack:
+                  candidates = [
+                      ("/assets/images/etf-cover.jpg", "ETF 분산투자 계획을 세우는 금융 사진")
+                  ]
+              elif "절세" in haystack or "연말정산" in haystack:
+                  candidates = [
+                      ("/assets/images/tax-refund-cover.jpg", "연봉과 세액공제를 계산하는 금융 사진"),
+                      ("/assets/images/isa-cover.jpg", "ISA·연금저축·ETF를 비교하는 금융 계획 사진")
+                  ]
+              elif "연금" in haystack or "ISA" in haystack:
+                  candidates = [
+                      ("/assets/images/retirement-cover.jpg", "장기 투자와 연금저축을 상징하는 금융 사진")
+                  ]
+              else:
+                  candidates = [
+                      ("/assets/images/fixed-costs-cover.jpg", "고정비와 월간 예산을 점검하는 생활 금융 사진"),
+                      ("/assets/images/retirement-cover.jpg", "장기 투자와 연금저축을 상징하는 금융 사진")
+                  ]
+              for candidate in candidates:
+                  if candidate[0] not in selected:
+                      return candidate
+              return candidates[0]
+
+          existing_buckets = {
+              (p.get("date", "")[:10], bucket_for(p))
+              for p in posts
+          }
+          selected_covers = set()
           added = 0
+
           for item in generated:
-              category = str(item.get("category", "")).strip()
-              slug = re.sub(r"[^a-z0-9-]+", "-", str(item.get("slug", "")).lower()).strip("-")
-              if not category or not slug or (today, category) in existing:
+              bucket = bucket_for(item)
+              if (today, bucket) in existing_buckets:
                   continue
-              title = html.escape(str(item.get("title", "")).strip())
-              excerpt = html.escape(str(item.get("excerpt", "")).strip())
-              body = re.sub(r"<(script|style|iframe|form)\b[^>]*>.*?</\1>", "", str(item.get("body_html", "")), flags=re.I|re.S)
-              body += '<h2>참고 자료</h2><ul>' + ''.join(f'<li><a href="{html.escape(str(u), quote=True)}">{html.escape(str(u))}</a></li>' for u in item.get("sources", [])) + '</ul><p class="note">이 글은 일반 정보이며 특정 금융상품의 매수·매도를 권유하지 않습니다.</p>'
-              page = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} · 부자된 아서</title><style>:root{{--bg:#f7f8fa;--card:#fff;--ink:#17191c;--body:#3b424c;--line:#e6eaf0;--blue:#3182f6;--soft:#eef5ff}}[data-theme=dark]{{--bg:#0d1117;--card:#151b24;--ink:#f4f7fb;--body:#d7dde7;--line:#2a3442;--blue:#8ab4ff;--soft:#192a43}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--body);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}}.wrap{{max-width:920px;margin:auto;padding:28px 20px 72px}}header{{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}}.brand,a{{color:var(--blue)}}.brand{{font-weight:800;text-decoration:none;font-size:20px}}button{{border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);padding:9px 14px}}main{{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,48px)}}.eyebrow{{color:var(--blue);font-weight:800}}h1,h2,h3{{color:var(--ink)}}h1{{font-size:clamp(32px,5vw,54px);line-height:1.18}}img{{display:block;width:100%;border-radius:18px;margin:24px 0}}table{{width:100%;border-collapse:collapse}}th,td{{border:1px solid var(--line);padding:10px;text-align:left}}th{{background:var(--soft)}}.note{{color:#7b8490;font-size:13px}}footer{{text-align:center;margin-top:24px}}</style></head><body><div class="wrap"><header><a class="brand" href="/">부자된 아서</a><button id="theme">☾ 다크모드</button></header><main><div class="eyebrow">{html.escape(category)}</div><h1>{title}</h1><p>{excerpt}</p><img src="/assets/images/finance-growth.svg" alt="재테크와 자산 성장 그래프 일러스트">{body}</main><footer><a href="/">← 홈으로 돌아가기</a></footer></div><script>const r=document.documentElement,b=document.getElementById("theme"),k="buja-theme";function s(t){{r.dataset.theme=t;b.textContent=t==="dark"?"☀ 라이트모드":"☾ 다크모드"}}s(localStorage.getItem(k)||"light");b.onclick=()=>{{let t=r.dataset.theme==="dark"?"light":"dark";localStorage.setItem(k,t);s(t)}};</script></body></html>'''
+
+              raw_slug = str(item.get("slug", "")).lower()
+              slug = re.sub(r"[^a-z0-9-]+", "-", raw_slug).strip("-")
+              category = str(item.get("category", "")).strip()
+              title_raw = str(item.get("title", "")).strip()
+              excerpt_raw = str(item.get("excerpt", "")).strip()
+              if not slug or not category or not title_raw or not excerpt_raw:
+                  continue
+
+              title = html.escape(title_raw)
+              excerpt = html.escape(excerpt_raw)
+              body = str(item.get("body_html", ""))
+              body = re.sub(r"<(script|style|iframe|form)\b[^>]*>.*?</\1>", "", body, flags=re.I | re.S)
+              body = re.sub(r"\s+on[a-z]+\s*=\s*(['\"]).*?\1", "", body, flags=re.I | re.S)
+              body = re.sub(r"javascript\s*:", "", body, flags=re.I)
+              allowed = r"p|h2|h3|strong|ul|li|table|thead|tbody|tr|th|td|blockquote|a|em|br"
+              body = re.sub(rf"<\/?(?!(?:{allowed})(?:\s|>|/))[^>]+>", "", body, flags=re.I)
+              sources = item.get("sources", [])
+              source_items = "".join(
+                  f'<li><a href="{html.escape(str(url), quote=True)}">{html.escape(str(url))}</a></li>'
+                  for url in sources[:8]
+                  if str(url).startswith(("https://", "http://"))
+              )
+              body += (
+                  "<h2>참고 자료</h2><ul>" + source_items + "</ul>"
+                  '<p class="note">이 글은 일반 정보이며 특정 금융상품의 매수·매도를 권유하지 않습니다.</p>'
+              )
+
+              image, alt = cover_for(item, selected_covers)
+              selected_covers.add(image)
+              page = f'''<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title} · 부자된 아서</title><style>:root{{--bg:#f7f8fa;--card:#fff;--ink:#17191c;--body:#3b424c;--line:#e6eaf0;--blue:#3182f6;--soft:#eef5ff}}[data-theme=dark]{{--bg:#0d1117;--card:#151b24;--ink:#f4f7fb;--body:#d7dde7;--line:#2a3442;--blue:#8ab4ff;--soft:#192a43}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--body);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}}.wrap{{max-width:920px;margin:auto;padding:28px 20px 72px}}header{{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}}.brand,a{{color:var(--blue)}}.brand{{font-weight:800;text-decoration:none;font-size:20px}}button{{border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);padding:9px 14px}}main{{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,48px)}}.eyebrow{{color:var(--blue);font-weight:800}}h1,h2,h3{{color:var(--ink)}}h1{{font-size:clamp(32px,5vw,54px);line-height:1.18}}.post-cover{{display:block;width:100%;max-height:420px;object-fit:cover;border-radius:18px;margin:22px 0 30px}}img{{display:block;width:100%;border-radius:18px;margin:24px 0}}table{{width:100%;border-collapse:collapse}}th,td{{border:1px solid var(--line);padding:10px;text-align:left}}th{{background:var(--soft)}}.note{{color:#7b8490;font-size:13px}}footer{{text-align:center;margin-top:24px}}</style></head><body><div class="wrap"><header><a class="brand" href="/">부자된 아서</a><button id="theme">☾ 다크모드</button></header><main><div class="eyebrow">{html.escape(category)}</div><h1>{title}</h1><p>{excerpt}</p><img class="post-cover" src="{image}" alt="{html.escape(alt, quote=True)}">{body}</main><footer><a href="/">← 홈으로 돌아가기</a></footer></div><script>const r=document.documentElement,b=document.getElementById("theme"),k="buja-theme";function s(t){{r.dataset.theme=t;b.textContent=t==="dark"?"☀ 라이트모드":"☾ 다크모드"}}s(localStorage.getItem(k)||"light");b.onclick=()=>{{let t=r.dataset.theme==="dark"?"light":"dark";localStorage.setItem(k,t);s(t)}};</script></body></html>'''
+
               path = Path("posts") / f"{today}-{slug}.html"
+              suffix = 2
+              while path.exists():
+                  path = Path("posts") / f"{today}-{slug}-{suffix}.html"
+                  suffix += 1
               path.write_text(page, encoding="utf-8")
-              posts.insert(0, {"date": now.isoformat(), "category": category, "categories": item.get("categories", []), "title": str(item.get("title", "")).strip(), "excerpt": str(item.get("excerpt", "")).strip(), "image": "/assets/images/finance-growth.svg", "alt": "재테크와 자산 성장 그래프 일러스트", "url": "/" + str(path)})
-              existing.add((today, category)); added += 1
-          if not added:
-              raise SystemExit("No new posts to publish")
+              posts.insert(0, {
+                  "date": now.isoformat(),
+                  "category": category,
+                  "categories": item.get("categories", []),
+                  "title": title_raw,
+                  "excerpt": excerpt_raw,
+                  "image": image,
+                  "alt": alt,
+                  "url": "/" + str(path)
+              })
+              existing_buckets.add((today, bucket))
+              added += 1
+
+          if added != 3:
+              raise SystemExit(f"Expected 3 new posts (domestic, nasdaq, other), but created {added}")
+
           posts.sort(key=lambda p: p.get("date", ""), reverse=True)
           manifest_path.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-          subprocess.run(["git","config","user.name","github-actions[bot]"], check=True)
-          subprocess.run(["git","config","user.email","41898282+github-actions[bot]@users.noreply.github.com"], check=True)
-          subprocess.run(["git","add","posts"], check=True)
-          subprocess.run(["git","commit","-m",f"Publish daily finance posts {today}"], check=True)
-          subprocess.run(["git","push"], check=True)
+          subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+          subprocess.run(["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"], check=True)
+          subprocess.run(["git", "add", "posts"], check=True)
+          subprocess.run(["git", "commit", "-m", f"Publish daily finance posts {today}"], check=True)
+          subprocess.run(["git", "push"], check=True)
           PY
