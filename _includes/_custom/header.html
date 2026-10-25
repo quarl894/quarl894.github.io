@@ -1,0 +1,24 @@
+<button class="custom-dark-toggle" type="button" aria-label="다크모드 전환" aria-pressed="false">☾ <span>다크모드</span></button>
+<script>
+(function () {
+  var key = 'buja-theme';
+  var button = document.querySelector('.custom-dark-toggle');
+  var root = document.documentElement;
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    if (button) {
+      button.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      button.innerHTML = theme === 'dark' ? '☀ <span>라이트모드</span>' : '☾ <span>다크모드</span>';
+    }
+  }
+  var saved = localStorage.getItem(key);
+  setTheme(saved || 'light');
+  if (button) {
+    button.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      localStorage.setItem(key, next);
+      setTheme(next);
+    });
+  }
+})();
+</script>
