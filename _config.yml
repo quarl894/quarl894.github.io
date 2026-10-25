@@ -1,0 +1,215 @@
+# ---------------------------------------------------------------
+# Jekyll & Global Configuration
+## Docs: https://jekyllrb.com/docs/configuration/
+# ---------------------------------------------------------------
+
+# Site
+title: 부자된 짱구 재테크 노트
+subtitle: 숫자로 확인하는 생활 재테크
+description: ISA, 연금저축, ETF를 실제 숫자로 비교하는 개인 재테크 기록
+author: 부자된 짱구
+# Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
+language: ko
+date_format: '%Y-%m-%d'
+
+# URL
+url:
+baseurl:
+permalink: /articles/:year-:month/:title
+
+paginate: 6
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md", "Gemfile", "Gemfile.lock", "README_en.md"]
+highlighter: rouge
+markdown: kramdown
+kramdown:
+    input: GFM
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+
+feed:
+  path: atom.xml
+
+plugins:
+ - jekyll-sitemap
+ - jekyll-feed
+
+favicon: /assets/favicon.ico
+keywords: "재테크, ISA, 연금저축, ETF, 절세, 자산관리"
+rss:
+authoricon: heart
+canonical: true
+seo: false
+index_with_subtitle: false
+
+menu:
+  home: /
+  categories: /categories/
+  about: /about/
+  archives: /archives/
+  tags: /tags/
+
+menu_icons:
+  enable: true
+  home: home
+  about: user
+  categories: th
+  tags: tags
+  archives: archive
+
+scheme: Muse
+font:
+  enable: true
+  host:
+  global:
+    external: true
+    family: Lato
+  headings:
+    external: true
+    family:
+  posts:
+    external: true
+    family:
+  logo:
+    external: true
+    family:
+    size:
+  codes:
+    external: true
+    family:
+    size:
+
+social:
+social_icons:
+  enable: true
+  GitHub: github
+avatar:
+
+toc:
+  enable: true
+  number: true
+  wrap: false
+
+sidebar:
+  position: right
+  display: hide
+  offset: 12
+  offset_float: 0
+  b2t: false
+  scrollpercent: false
+
+scroll_to_more: true
+save_scroll: false
+excerpt_description: true
+auto_excerpt:
+  enable: false
+  length: 150
+
+post_meta:
+  item_text: false
+  created_at: true
+  updated_at: false
+  categories: true
+
+post_wordcount:
+  item_text: true
+  wordcount: false
+  min2read: false
+  separated_meta: true
+
+post_copyright:
+  enable: false
+  license: CC BY-NC-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+custom_logo:
+  enabled: false
+  image:
+
+highlight_theme: normal
+mathjax:
+  enable: false
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+han: false
+
+disqus:
+  enable: false
+  shortname:
+  count: false
+  hide: true
+
+google_analytics:
+
+changyan:
+  enable: false
+  appid:
+  appkey:
+
+facebook_sdk:
+  enable: false
+facebook_comments_plugin:
+  enable: false
+vkontakte_api:
+  enable: false
+rating:
+  enable: false
+leancloud_visitors:
+  enable: false
+busuanzi_count:
+  enable: false
+baidu_push: false
+
+calendar:
+  enable: false
+algolia_search:
+  enable: false
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+exturl: false
+
+use_motion: true
+fancybox: true
+pace: false
+pace_theme: pace-theme-minimal
+canvas_nest: false
+three_waves: false
+canvas_lines: false
+canvas_sphere: false
+canvas_ribbon: false
+
+vendors:
+  _internal: assets/lib
+  jquery:
+  fancybox:
+  fancybox_css:
+  fastclick:
+  lazyload:
+  velocity:
+  velocity_ui:
+  ua_parser:
+  fontawesome:
+  algolia_instant_js:
+  algolia_instant_css:
+  pace:
+  pace_css:
+  canvas_nest:
+  three:
+  three_waves:
+  canvas_lines:
+  canvas_sphere:
+  canvas_ribbon:
+  han:
+
+css: assets/css
+js: assets/js
+images: assets/images
+version: 5.1.1
