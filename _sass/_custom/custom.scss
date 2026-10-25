@@ -1,0 +1,41 @@
+// 부자된 짱구 재테크 피드 스타일
+:root {
+  --site-bg: #f7f8fa;
+  --site-card: #ffffff;
+  --site-ink: #17191c;
+  --site-body: #343a40;
+  --site-muted: #7b8490;
+  --site-line: #e8ebf0;
+  --site-blue: #3182f6;
+  --site-soft-blue: #f3f7ff;
+}
+
+html[data-theme='dark'] {
+  --site-bg: #0d1117;
+  --site-card: #151b24;
+  --site-ink: #f4f7fb;
+  --site-body: #d7dde7;
+  --site-muted: #9aa6b5;
+  --site-line: #2a3442;
+  --site-blue: #79aafc;
+  --site-soft-blue: #182940;
+}
+
+body { background: var(--site-bg); transition: background .2s ease, color .2s ease; }
+.main-inner { max-width: 880px; }
+.post { background: var(--site-card); border: 1px solid var(--site-line); border-radius: 18px; box-shadow: 0 8px 24px rgba(30, 40, 60, .04); padding: 32px; margin-bottom: 24px; transition: background .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.post-title { font-size: 28px; line-height: 1.35; letter-spacing: -.02em; }
+.post-title-link { color: var(--site-ink); }
+.post-meta { color: var(--site-muted); }
+.post-body { color: var(--site-body); font-size: 16px; line-height: 1.85; }
+.post-body h2 { margin-top: 2.2em; color: var(--site-ink); font-size: 22px; letter-spacing: -.02em; }
+.post-body blockquote { border-left: 4px solid var(--site-blue); background: var(--site-soft-blue); border-radius: 0 10px 10px 0; padding: 14px 18px; color: var(--site-body); }
+.post-body table { display: table; width: 100%; margin: 20px 0; border-collapse: collapse; font-size: 14px; }
+.post-body th { background: color-mix(in srgb, var(--site-soft-blue) 55%, var(--site-card)); color: var(--site-body); font-weight: 700; }
+.post-body th, .post-body td { padding: 12px 14px; border: 1px solid var(--site-line); }
+.post-button .btn { border-radius: 999px; padding: 8px 18px; background: var(--site-ink); color: var(--site-card); border: 0; }
+.custom-dark-toggle { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--site-line); border-radius: 999px; padding: 8px 13px; background: var(--site-card); color: var(--site-ink); cursor: pointer; font: inherit; font-size: 12px; box-shadow: 0 4px 12px rgba(30,40,60,.06); }
+.custom-dark-toggle:hover { transform: translateY(-1px); }
+.custom-post-illustration { display: block; width: 100%; max-width: 720px; margin: 24px auto 30px; border-radius: 18px; }
+.post-eof { display: none; }
+@media (max-width: 767px) { .post { padding: 22px 18px; border-radius: 14px; } .post-title { font-size: 23px; } .post-body table { display: block; overflow-x: auto; } .custom-dark-toggle span { display: none; } }
