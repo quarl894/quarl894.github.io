@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>문의하기 · 부자된 아서</title>
+<meta name="description" content="부자된 아서 재테크 노트 문의하기">
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--ink:#17191c;--body:#3b424c;--muted:#7b8490;--line:#e6eaf0;--blue:#3182f6;--soft:#eef5ff}
+[data-theme=dark]{--bg:#0d1117;--card:#151b24;--ink:#f4f7fb;--body:#d7dde7;--muted:#9aa6b5;--line:#2a3442;--blue:#8ab4ff;--soft:#192a43}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--body);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}.wrap{max-width:920px;margin:auto;padding:28px 20px 72px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}.brand{color:var(--ink);font-weight:800;text-decoration:none;font-size:20px}.toggle{border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);padding:9px 14px;cursor:pointer}main{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,48px)}h1,h2{color:var(--ink)}h1{font-size:clamp(32px,5vw,52px);line-height:1.2}h2{margin-top:34px}a{color:var(--blue)}.contact-card{background:var(--soft);border-radius:18px;padding:22px;margin:24px 0}.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="brand" href="/">부자된 아서</a><button class="toggle" id="theme">☾ 다크모드</button></header>
+<main>
+<div class="eyebrow">문의하기</div>
+<h1>같이 더 나은<br>재테크 기록을 만들어가요.</h1>
+<p>글을 읽다가 궁금한 점이 생겼거나, 숫자·출처·링크에 오류를 발견했다면 알려주세요. 평범한 직장인의 작은 기록이 더 정확하고 유용한 정보가 되도록 확인하겠습니다.</p>
+<div class="contact-card"><strong>GitHub Issues로 문의하기</strong><p>게시글 제목과 함께 궁금한 점, 수정이 필요한 부분, 관련 링크를 남겨주세요.</p><p><a href="https://github.com/quarl894/quarl894.github.io/issues">문의 남기기 →</a></p></div>
+<h2>문의할 때 알려주면 좋은 내용</h2>
+<ul><li>관련 게시글 주소 또는 제목</li><li>궁금한 내용이나 발견한 오류</li><li>확인에 도움이 되는 공식 출처 링크</li></ul>
+<h2>답변 안내</h2>
+<p>이 사이트는 개인이 운영하는 기록 공간이라 답변이 늦을 수 있습니다. 투자 판단은 각자의 책임이며, 문의 답변은 개인별 투자 자문이나 수익 보장을 의미하지 않습니다.</p>
+<p class="note">개인정보, 계좌번호, 주민등록번호, API 키와 같은 민감한 정보는 문의에 남기지 마세요.</p>
+</main>
+<footer class="footer"><a href="/">홈</a> · <a href="/about.html">운영자 소개</a> · <a href="/privacy.html">개인정보처리방침</a></footer>
+</div>
+<script>
+const root=document.documentElement,button=document.getElementById("theme"),key="buja-theme";
+function setTheme(t){root.dataset.theme=t;button.textContent=t==="dark"?"☀ 라이트모드":"☾ 다크모드"}setTheme(localStorage.getItem(key)||"light");
+button.addEventListener("click",()=>{const t=root.dataset.theme==="dark"?"light":"dark";localStorage.setItem(key,t);setTheme(t)});
+</script>
+</body>
+</html>
