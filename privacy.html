@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>개인정보처리방침 · 부자된 아서</title>
+<meta name="description" content="부자된 아서 재테크 노트의 개인정보처리방침">
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--ink:#17191c;--body:#3b424c;--muted:#7b8490;--line:#e6eaf0;--blue:#3182f6;--soft:#eef5ff}
+[data-theme=dark]{--bg:#0d1117;--card:#151b24;--ink:#f4f7fb;--body:#d7dde7;--muted:#9aa6b5;--line:#2a3442;--blue:#8ab4ff;--soft:#192a43}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--body);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}.wrap{max-width:920px;margin:auto;padding:28px 20px 72px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}.brand{color:var(--ink);font-weight:800;text-decoration:none;font-size:20px}.toggle{border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);padding:9px 14px;cursor:pointer}main{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,5vw,48px)}h1,h2{color:var(--ink)}h1{font-size:clamp(32px,5vw,52px);line-height:1.2}h2{margin-top:34px}a{color:var(--blue)}.note{color:var(--muted);font-size:13px}.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="brand" href="/">부자된 아서</a><button class="toggle" id="theme">☾ 다크모드</button></header>
+<main>
+<div class="eyebrow">사이트 안내</div>
+<h1>개인정보처리방침</h1>
+<p>시행일: 2026년 10월 26일</p>
+<p>‘부자된 아서’(이하 ‘사이트’)는 방문자의 개인정보를 소중하게 보호합니다. 이 방침은 사이트 이용 과정에서 처리될 수 있는 정보와 그 이용 방법을 안내합니다.</p>
+<h2>1. 수집·처리될 수 있는 정보</h2>
+<p>사이트는 별도의 회원가입이나 댓글 기능을 운영하지 않습니다. 방문 과정에서 브라우저, 접속 시각, IP 주소, 기기·브라우저 정보와 같은 기술 정보가 웹 호스팅·보안·통계 서비스의 서버 로그에 기록될 수 있습니다.</p>
+<h2>2. 광고 및 쿠키</h2>
+<p>사이트는 Google AdSense를 사용할 수 있습니다. Google 및 광고 파트너는 광고 제공, 측정, 보안과 개인화 여부 판단을 위해 쿠키·웹 비콘·IP 주소 등 식별자를 사용할 수 있습니다. 개인 맞춤 광고와 쿠키 사용에 관한 자세한 내용은 Google의 <a href="https://policies.google.com/technologies/ads">광고 기술 안내</a>와 <a href="https://policies.google.com/privacy">개인정보처리방침</a>에서 확인할 수 있습니다.</p>
+<p>방문자는 브라우저 설정에서 쿠키를 차단하거나 삭제할 수 있습니다. 쿠키를 차단하면 일부 기능이나 광고 설정이 달라질 수 있습니다.</p>
+<h2>3. 정보의 이용 목적</h2>
+<p>사이트는 방문자의 요청에 따른 페이지 제공, 보안·오류 대응, 방문 통계 개선, 광고 운영 및 정책 준수를 위해 정보를 처리할 수 있습니다.</p>
+<h2>4. 제3자 링크</h2>
+<p>게시글에는 국세청, 금융위원회, 금융감독원, 한국거래소, Nasdaq, SEC 등 외부 기관 링크가 포함될 수 있습니다. 외부 사이트의 개인정보처리방침과 운영 방식은 해당 기관의 정책을 따릅니다.</p>
+<h2>5. 보유 및 문의</h2>
+<p>사이트가 직접 수집하는 별도 회원 데이터베이스는 운영하지 않습니다. 개인정보 처리 또는 정책에 관한 문의는 <a href="https://github.com/quarl894/quarl894.github.io/issues">GitHub Issues</a>를 이용해 주세요.</p>
+<h2>6. 방침 변경</h2>
+<p>법령, 광고 서비스 또는 사이트 기능이 변경되면 이 방침을 업데이트할 수 있습니다. 변경 시 이 페이지의 시행일을 갱신합니다.</p>
+<p class="note">이 문서는 사이트 운영 현황을 설명하기 위한 안내이며, 법률 자문을 대신하지 않습니다.</p>
+</main>
+<footer class="footer"><a href="/">홈으로 돌아가기</a></footer>
+</div>
+<script>
+const root=document.documentElement,button=document.getElementById("theme"),key="buja-theme";
+function setTheme(t){root.dataset.theme=t;button.textContent=t==="dark"?"☀ 라이트모드":"☾ 다크모드"}setTheme(localStorage.getItem(key)||"light");
+button.addEventListener("click",()=>{const t=root.dataset.theme==="dark"?"light":"dark";localStorage.setItem(key,t);setTheme(t)});
+</script>
+</body>
+</html>
