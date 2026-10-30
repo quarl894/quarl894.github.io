@@ -1,5 +1,44 @@
 [
   {
+    "date": "2026-10-30T12:23:14.741632+09:00",
+    "category": "절세 · 현금흐름",
+    "categories": [
+      "절세",
+      "재테크 기초"
+    ],
+    "title": "월 배당? 연 1,200만 원 금융소득 절세와 배당 현금흐름, 어디까지 노려볼까",
+    "excerpt": "배당주·예금·채권 이자 등 금융소득이 연 1,200만 원을 넘기면 세금 구조가 완전히 달라집니다. 한국 거주자가 알아둘 금융소득종합과세와 배당 현금흐름 설계의 기본을 정리했습니다.",
+    "image": "/assets/images/tax-refund-cover.jpg",
+    "alt": "연봉과 세액공제를 계산하는 금융 사진",
+    "url": "/posts/2026-10-30-korea-tax-saving-dividend-cashflow-basics-2026-10.html"
+  },
+  {
+    "date": "2026-10-30T12:23:14.741632+09:00",
+    "category": "미국주식 · 나스닥",
+    "categories": [
+      "해외주식",
+      "투자"
+    ],
+    "title": "나스닥 대형주 실적 시즌, 한국 투자자가 꼭 봐야 할 3가지 숫자",
+    "excerpt": "나스닥 대형 기술주의 실적 발표는 코스피·코스닥에도 큰 영향을 줍니다. 매출 성장률·영업이익률·현금흐름이라는 세 가지 숫자를 중심으로 리스크를 정리합니다.",
+    "image": "/assets/images/nasdaq-cover.jpg",
+    "alt": "나스닥 기술주 시장을 분석하는 트레이딩 데스크 사진",
+    "url": "/posts/2026-10-30-nasdaq-bigtech-earnings-and-kospi-investor-2026-10.html"
+  },
+  {
+    "date": "2026-10-30T12:23:14.741632+09:00",
+    "category": "국내주식 · 시장분석",
+    "categories": [
+      "국내주식",
+      "투자"
+    ],
+    "title": "코스닥 PER 15배, 아직 비싼가? 2026년 스몰캡 밸류에이션 점검",
+    "excerpt": "코스닥 지수가 2026년 들어 반등하면서 밸류에이션 부담을 걱정하는 분들이 많습니다. 최근 PER·PBR 수준과 실적 흐름을 기준으로 스몰캡 투자 시 체크해야 할 포인트를 정리했습니다.",
+    "image": "/assets/images/korean-stocks-cover.jpg",
+    "alt": "국내주식과 반도체 시장을 분석하는 금융 사진",
+    "url": "/posts/2026-10-30-korea-smallcap-valuation-check-2026-10.html"
+  },
+  {
     "date": "2026-10-29T12:21:27.568323+09:00",
     "category": "절세 · 재테크 기초",
     "categories": [
