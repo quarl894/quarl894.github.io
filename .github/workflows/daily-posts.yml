@@ -97,35 +97,49 @@ jobs:
               haystack = categories + " " + category
               if "국내주식" in haystack:
                   candidates = [
-                      ("/assets/images/korean-stocks-cover.jpg", "국내주식과 반도체 시장을 분석하는 금융 사진")
+                      ("/assets/images/korean-stocks-cover.jpg", "국내주식과 반도체 시장을 분석하는 금융 사진"),
+                      ("/assets/images/buja-market-illustration.png", "국내외 시장 흐름을 살펴보는 재테크 일러스트"),
+                      ("/assets/images/finance-growth.svg", "시장 사이클과 자산 성장을 보여주는 금융 일러스트")
                   ]
               elif "나스닥" in haystack or "미국주식" in haystack:
                   candidates = [
                       ("/assets/images/nasdaq-cover.jpg", "나스닥 기술주 시장을 분석하는 트레이딩 데스크 사진"),
-                      ("/assets/images/nasdaq-volatility-cover.jpg", "나스닥 변동성과 시장 폭을 보여주는 금융 사진")
+                      ("/assets/images/nasdaq-volatility-cover.jpg", "나스닥 변동성과 시장 폭을 보여주는 금융 사진"),
+                      ("/assets/images/buja-market-illustration.png", "미국 기술주와 시장 차트를 살펴보는 재테크 일러스트")
                   ]
               elif "ETF" in haystack:
                   candidates = [
-                      ("/assets/images/etf-cover.jpg", "ETF 분산투자 계획을 세우는 금융 사진")
+                      ("/assets/images/etf-cover.jpg", "ETF 분산투자 계획을 세우는 금융 사진"),
+                      ("/assets/images/isa-cover.jpg", "ISA와 ETF 절세 전략을 비교하는 금융 계획 사진"),
+                      ("/assets/images/finance-growth.svg", "ETF와 장기 자산 성장을 보여주는 금융 일러스트")
                   ]
               elif "절세" in haystack or "연말정산" in haystack:
                   candidates = [
                       ("/assets/images/tax-refund-cover.jpg", "연봉과 세액공제를 계산하는 금융 사진"),
-                      ("/assets/images/isa-cover.jpg", "ISA·연금저축·ETF를 비교하는 금융 계획 사진")
+                      ("/assets/images/isa-cover.jpg", "ISA와 연금저축 절세 전략을 비교하는 금융 계획 사진"),
+                      ("/assets/images/fixed-costs-cover.jpg", "고정비와 월간 예산을 점검하는 생활 금융 사진"),
+                      ("/assets/images/buja-market-illustration.png", "생활 재테크 계획을 세우는 금융 일러스트")
                   ]
               elif "연금" in haystack or "ISA" in haystack:
                   candidates = [
-                      ("/assets/images/retirement-cover.jpg", "장기 투자와 연금저축을 상징하는 금융 사진")
+                      ("/assets/images/retirement-cover.jpg", "장기 투자와 연금저축을 상징하는 금융 사진"),
+                      ("/assets/images/isa-cover.jpg", "ISA와 연금저축 절세 전략을 비교하는 금융 계획 사진"),
+                      ("/assets/images/finance-growth.svg", "장기 자산 성장을 보여주는 금융 일러스트")
                   ]
               else:
                   candidates = [
                       ("/assets/images/fixed-costs-cover.jpg", "고정비와 월간 예산을 점검하는 생활 금융 사진"),
-                      ("/assets/images/retirement-cover.jpg", "장기 투자와 연금저축을 상징하는 금융 사진")
+                      ("/assets/images/retirement-cover.jpg", "장기 투자와 연금저축을 상징하는 금융 사진"),
+                      ("/assets/images/finance-growth.svg", "재테크와 자산 성장을 보여주는 금융 일러스트"),
+                      ("/assets/images/buja-market-illustration.png", "월급 관리와 시장 흐름을 살펴보는 재테크 일러스트")
                   ]
-              for candidate in candidates:
+
+              rotation = int(now.strftime("%d")) % len(candidates)
+              ordered = candidates[rotation:] + candidates[:rotation]
+              for candidate in ordered:
                   if candidate[0] not in selected:
                       return candidate
-              return candidates[0]
+              return ordered[0]
 
           existing_buckets = {
               (p.get("date", "")[:10], bucket_for(p))
