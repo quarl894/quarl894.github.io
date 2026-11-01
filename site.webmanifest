@@ -1,0 +1,16 @@
+{
+  "name": "부자된 아서 재테크 노트",
+  "short_name": "부자된 아서",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f8fa",
+  "theme_color": "#f7f8fa",
+  "icons": [
+    {
+      "src": "/assets/images/arthur-mascot.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
