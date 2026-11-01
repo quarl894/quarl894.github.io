@@ -167,6 +167,8 @@ jobs:
               body = re.sub(r"<(script|style|iframe|form)\b[^>]*>.*?</\1>", "", body, flags=re.I | re.S)
               body = re.sub(r"\s+on[a-z]+\s*=\s*(['\"]).*?\1", "", body, flags=re.I | re.S)
               body = re.sub(r"javascript\s*:", "", body, flags=re.I)
+              # Keep generated emphasis from leaking across malformed nested tags; base article text stays regular weight.
+              body = re.sub(r"</?strong\\b[^>]*>", "", body, flags=re.I)
               allowed = r"p|h2|h3|strong|ul|li|table|thead|tbody|tr|th|td|blockquote|a|em|br"
               body = re.sub(rf"<\/?(?!(?:{allowed})(?:\s|>|/))[^>]+>", "", body, flags=re.I)
               def repair_tables(fragment):
