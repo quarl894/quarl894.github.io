@@ -1,8 +1,6 @@
 name: Daily finance posts
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -43,7 +41,7 @@ jobs:
           각 게시글의 bucket은 반드시 domestic, nasdaq, other 중 하나로 지정한다.
           기타 재테크는 절세·현금흐름·ETF·재테크 기초 중 하나를 선택한다.
           최신 숫자는 공식 자료를 우선하고, 기준일·핵심 숫자·위험요인·참고 링크·투자 권유가 아니라는 고지를 포함한다.
-          자극적인 제목은 가능하지만 확정 수익 약속과 과장은 금지한다. 다른 블로그 문장을 복사하지 않는다.
+          제목은 명확하고 정보 중심으로 작성하며 낚시성·공포 조장·확정 수익 표현(예: 지금 사야, 무조건, 대박, 폭등, 현금은 왕이다)은 사용하지 않는다. 다른 블로그 문장을 복사하지 않고, 각 글의 분석·계산·해석을 독자적으로 작성한다.
           기존 글과 제목·문단·표·사례를 반복하지 말고, 각 글마다 오늘의 공식 출처에서 확인한 고유 숫자 2개 이상과 그 숫자의 의미를 설명한다.
           검색 노출만을 위한 일반론·상투적 문장·근거 없는 전망은 줄이고, 실제 독자가 실행할 수 있는 점검표나 계산 예시를 포함한다.
           각 글은 독립적으로 읽혀야 하며, 이미지와 본문 주제가 일치하고 동일한 이미지·문구의 반복을 피한다.
@@ -256,6 +254,19 @@ jobs:
                   return "".join(out)
 
               body = close_open_tags(body)
+
+              def validate_article(fragment):
+                  tags = ("p", "h1", "h2", "h3", "ul", "ol", "li", "table", "thead", "tbody", "tr", "th", "td", "blockquote")
+                  for tag in tags:
+                      opened = len(re.findall(rf"<{tag}\\b", fragment, flags=re.I))
+                      closed = len(re.findall(rf"</{tag}>", fragment, flags=re.I))
+                      if opened != closed:
+                          raise SystemExit(f"Invalid HTML: {tag} open={opened} close={closed}")
+                  for table_match in re.finditer(r"<table\\b[^>]*>([\\s\\S]*?)</table>", fragment, flags=re.I):
+                      if re.search(r"</?(?:p|h[1-6]|ul|ol|li|blockquote|div)\\b", table_match.group(1), flags=re.I):
+                          raise SystemExit("Invalid table: explanatory content must be outside the table")
+              
+              validate_article(body)
               sources = item.get("sources", [])
               source_items = "".join(
                   f'<li><a href="{html.escape(str(url), quote=True)}">{html.escape(str(url))}</a></li>'
