@@ -209,7 +209,7 @@ jobs:
               body = repair_tables(body)
 
               def close_open_tags(fragment):
-                  tag_re = re.compile(r"<(/?)(p|h2|h3|ul|ol|li|table|thead|tbody|tr|th|td|blockquote|a|em|strong|br)(?:\\s[^>]*)?>", re.I)
+                  tag_re = re.compile(r"<(/?)(p|h2|h3|ul|ol|li|table|thead|tbody|tr|th|td|blockquote|a|em|strong|br)(?:\s[^>]*)?>", re.I)
                   void_tags = {"br"}
                   stack = []
                   out = []
@@ -258,12 +258,12 @@ jobs:
               def validate_article(fragment):
                   tags = ("p", "h1", "h2", "h3", "ul", "ol", "li", "table", "thead", "tbody", "tr", "th", "td", "blockquote")
                   for tag in tags:
-                      opened = len(re.findall(rf"<{tag}\\b", fragment, flags=re.I))
+                      opened = len(re.findall(rf"<{tag}\b", fragment, flags=re.I))
                       closed = len(re.findall(rf"</{tag}>", fragment, flags=re.I))
                       if opened != closed:
                           raise SystemExit(f"Invalid HTML: {tag} open={opened} close={closed}")
-                  for table_match in re.finditer(r"<table\\b[^>]*>([\\s\\S]*?)</table>", fragment, flags=re.I):
-                      if re.search(r"</?(?:p|h[1-6]|ul|ol|li|blockquote|div)\\b", table_match.group(1), flags=re.I):
+                  for table_match in re.finditer(r"<table\b[^>]*>([\s\S]*?)</table>", fragment, flags=re.I):
+                      if re.search(r"</?(?:p|h[1-6]|ul|ol|li|blockquote|div)\b", table_match.group(1), flags=re.I):
                           raise SystemExit("Invalid table: explanatory content must be outside the table")
               
               validate_article(body)
