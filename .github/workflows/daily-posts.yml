@@ -209,6 +209,53 @@ jobs:
                   return table_re.sub(normalize_table, fragment)
 
               body = repair_tables(body)
+
+              def close_open_tags(fragment):
+                  tag_re = re.compile(r"<(/?)(p|h2|h3|ul|ol|li|table|thead|tbody|tr|th|td|blockquote|a|em|strong|br)(?:\\s[^>]*)?>", re.I)
+                  void_tags = {"br"}
+                  stack = []
+                  out = []
+                  cursor = 0
+                  block_tags = {"p", "h2", "h3", "blockquote", "table", "ul", "ol"}
+                  for match in tag_re.finditer(fragment):
+                      out.append(fragment[cursor:match.start()])
+                      closing, tag = match.group(1), match.group(2).lower()
+                      token = match.group(0)
+                      if closing:
+                          if tag in stack:
+                              while stack and stack[-1] != tag:
+                                  out.append(f"</{stack.pop()}>")
+                              if stack:
+                                  stack.pop()
+                              out.append(token)
+                          cursor = match.end()
+                          continue
+                      if tag == "li":
+                          while stack and stack[-1] == "li":
+                              out.append("</li>")
+                              stack.pop()
+                      if tag in {"p", "h2", "h3", "blockquote"}:
+                          while stack and stack[-1] in {"p", "h2", "h3", "blockquote"}:
+                              out.append(f"</{stack.pop()}>")
+                      if tag in {"th", "td"}:
+                          while stack and stack[-1] in {"th", "td"}:
+                              out.append(f"</{stack.pop()}>")
+                      if tag == "tr":
+                          while stack and stack[-1] in {"th", "td"}:
+                              out.append(f"</{stack.pop()}>")
+                          if stack and stack[-1] == "tr":
+                              out.append("</tr>")
+                              stack.pop()
+                      out.append(token)
+                      if tag not in void_tags:
+                          stack.append(tag)
+                      cursor = match.end()
+                  out.append(fragment[cursor:])
+                  while stack:
+                      out.append(f"</{stack.pop()}>")
+                  return "".join(out)
+
+              body = close_open_tags(body)
               sources = item.get("sources", [])
               source_items = "".join(
                   f'<li><a href="{html.escape(str(url), quote=True)}">{html.escape(str(url))}</a></li>'
