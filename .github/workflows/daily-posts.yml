@@ -174,10 +174,10 @@ jobs:
               def repair_tables(fragment):
                   def close_table(match):
                       chunk = match.group(0)
-                      if re.search(r"</table\\s*>", chunk, flags=re.I):
+                      if re.search(r"</table\s*>", chunk, flags=re.I):
                           return chunk
                       return chunk.rstrip() + "</tr></tbody></table>\\n"
-                  return re.sub(r"<table\\b[^>]*>[\\s\\S]*?(?=<(?:p|h[1-6]|ul|ol|blockquote|div|footer)\\b|</main>)", close_table, fragment, flags=re.I)
+                  return re.sub(r"<table\b[^>]*>[\s\S]*?(?=<(?:p|h[1-6]|ul|ol|blockquote|div|footer)\b|</main>)", close_table, fragment, flags=re.I)
 
               body = repair_tables(body)
               sources = item.get("sources", [])
