@@ -8,7 +8,7 @@
     ],
     "title": "연말에 한 번만 해도 세금 새는 구멍 막는 투자자 원천징수 점검표",
     "excerpt": "국내주식·해외주식·예금·펀드에서 이미 빠져나간 원천징수 세금을 스스로 점검하는 방법을 정리했습니다. 국세청 홈택스와 금융투자협회 공개 자료 기준 수치를 활용합니다.",
-    "image": "/assets/images/fixed-costs-cover.jpg",
+    "image": "/assets/images/tax-refund-cover.jpg",
     "alt": "고정비와 월간 예산을 점검하는 생활 금융 사진",
     "url": "/posts/2026-11-06-withholding-tax-checklist-2026.html"
   },
@@ -60,7 +60,7 @@
     ],
     "title": "2026년 나스닥 빅테크 FCF 점검: 한국 투자자가 확인할 두 가지 숫자",
     "excerpt": "2026년 11월, 나스닥 주요 빅테크 기업들의 자유현금흐름과 순현금 규모는 주가 조정기에 더 중요해졌습니다. PER 대신 FCF와 현금 보유액으로 나스닥 투자를 점검하는 방법을 정리합니다.",
-    "image": "/assets/images/buja-market-illustration.png",
+    "image": "/assets/images/nasdaq-volatility-cover.jpg",
     "alt": "미국 기술주와 시장 차트를 살펴보는 재테크 일러스트",
     "url": "/posts/2026-11-05-nasdaq-cashflow-tech-2026.html"
   },
@@ -87,7 +87,7 @@
     ],
     "title": "월배당보다 더 중요한 것: 2026년 한국 투자자를 위한 ETF 절세 가이드",
     "excerpt": "월배당 ETF 인기에 가려진 세금 구조를 2026년 기준으로 정리했다. 국내·해외 ETF의 과세 차이와 절세 관점에서 체크해야 할 핵심 포인트를 짚어본다.",
-    "image": "/assets/images/etf-cover.jpg",
+    "image": "/assets/images/tax-refund-cover.jpg",
     "alt": "ETF 분산투자 계획을 세우는 금융 사진",
     "url": "/posts/2026-11-01-korea-tax-efficient-etf-income-2026.html"
   },
@@ -127,7 +127,7 @@
     ],
     "title": "연 3%대 예금만으론 부족하다: 2026년 현실적인 현금흐름·절세 전략 정리",
     "excerpt": "기준금리 3.5% 시대, 예·적금만으로는 물가를 따라가기 어려워졌다. 세후 수익률을 높이는 국내 개인 투자자의 현금흐름·절세 기본 전략을 정리한다.",
-    "image": "/assets/images/tax-refund-cover.jpg",
+    "image": "/assets/images/isa-cover.jpg",
     "alt": "연봉과 세액공제를 계산하는 금융 사진",
     "url": "/posts/2026-10-31-korean-tax-efficient-cashflow-planning-2026.html"
   },
@@ -153,7 +153,7 @@
     ],
     "title": "3분기 실적 발표 끝나가는데… 한국 성장주, 지금 들어가도 될까?",
     "excerpt": "2026년 3분기 실적 시즌 막바지에서 코스피·코스닥 실적 흐름과 금리 인하 기대를 함께 살펴본다. 특정 종목 대신 성장주 전반을 볼 때 체크해야 할 핵심 숫자와 리스크를 정리했다.",
-    "image": "/assets/images/buja-market-illustration.png",
+    "image": "/assets/images/finance-growth.svg",
     "alt": "국내외 시장 흐름을 살펴보는 재테크 일러스트",
     "url": "/posts/2026-10-31-korea-stock-2026-q3-earnings-and-rate-cut-expectations.html"
   },
@@ -166,7 +166,7 @@
     ],
     "title": "월 배당? 연 1,200만 원 금융소득 절세와 배당 현금흐름, 어디까지 노려볼까",
     "excerpt": "배당주·예금·채권 이자 등 금융소득이 연 1,200만 원을 넘기면 세금 구조가 완전히 달라집니다. 한국 거주자가 알아둘 금융소득종합과세와 배당 현금흐름 설계의 기본을 정리했습니다.",
-    "image": "/assets/images/isa-cover.jpg",
+    "image": "/assets/images/fixed-costs-cover.jpg",
     "alt": "ISA와 연금저축 절세 전략을 비교하는 금융 계획 사진",
     "url": "/posts/2026-10-30-korea-tax-saving-dividend-cashflow-basics-2026-10.html"
   },
@@ -192,7 +192,7 @@
     ],
     "title": "코스닥 PER 15배, 아직 비싼가? 2026년 스몰캡 밸류에이션 점검",
     "excerpt": "코스닥 지수가 2026년 들어 반등하면서 밸류에이션 부담을 걱정하는 분들이 많습니다. 최근 PER·PBR 수준과 실적 흐름을 기준으로 스몰캡 투자 시 체크해야 할 포인트를 정리했습니다.",
-    "image": "/assets/images/finance-growth.svg",
+    "image": "/assets/images/korean-stocks-cover.jpg",
     "alt": "시장 사이클과 자산 성장을 보여주는 금융 일러스트",
     "url": "/posts/2026-10-30-korea-smallcap-valuation-check-2026-10.html"
   },
@@ -205,7 +205,7 @@
     ],
     "title": "나스닥 또 오르는데 지금 들어가도 될까? 83% 종목이 고점에서 빠진 이유",
     "excerpt": "AI 실적·시장 폭·금리 리스크를 숫자로 확인합니다.",
-    "image": "/assets/images/buja-market-illustration.png",
+    "image": "/assets/images/nasdaq-cover.jpg",
     "alt": "미국 기술주와 시장 차트를 살펴보는 재테크 일러스트",
     "url": "/posts/nasdaq-analysis.html"
   },
@@ -218,7 +218,7 @@
     ],
     "title": "코스피 7,000인데 삼성전자만 사면 괜찮을까? 국내주식의 진짜 위험 3가지",
     "excerpt": "반도체·실적·수급 쏠림을 숫자로 점검합니다.",
-    "image": "/assets/images/buja-market-illustration.png",
+    "image": "/assets/images/finance-growth.svg",
     "alt": "국내외 시장 흐름을 살펴보는 재테크 일러스트",
     "url": "/posts/korean-stocks-samsung.html"
   },
@@ -231,7 +231,7 @@
     ],
     "title": "절약보다 먼저 줄여야 하는 고정비 5가지",
     "excerpt": "주거비·보험료·통신비처럼 반복되는 비용부터 점검합니다.",
-    "image": "/assets/images/fixed-costs-cover.jpg",
+    "image": "/assets/images/etf-cover.jpg",
     "alt": "고정비와 월간 예산을 점검하는 생활 금융 사진",
     "url": "/posts/fixed-costs.html"
   },
@@ -270,7 +270,7 @@
     ],
     "title": "매달 50만 원, ISA와 연금저축에 20년 넣으면… 세금 차이가 630만 원?",
     "excerpt": "ISA와 연금저축을 같은 조건의 숫자로 비교합니다.",
-    "image": "/assets/images/buja-market-illustration.png",
+    "image": "/assets/images/tax-refund-cover.jpg",
     "alt": "생활 재테크 계획을 세우는 금융 일러스트",
     "url": "/posts/isa-vs-pension.html"
   }
