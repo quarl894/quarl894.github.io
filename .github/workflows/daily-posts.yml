@@ -92,6 +92,8 @@ jobs:
                   return "nasdaq"
               return "other"
 
+          recent_images = {str(p.get("image", "")) for p in posts[:15]}
+
           def cover_for(item, selected):
               categories = " ".join(str(x) for x in item.get("categories", []))
               category = str(item.get("category", ""))
@@ -137,6 +139,9 @@ jobs:
 
               rotation = int(now.strftime("%d")) % len(candidates)
               ordered = candidates[rotation:] + candidates[:rotation]
+              for candidate in ordered:
+                  if candidate[0] not in selected and candidate[0] not in recent_images:
+                      return candidate
               for candidate in ordered:
                   if candidate[0] not in selected:
                       return candidate
