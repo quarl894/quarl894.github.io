@@ -8,8 +8,8 @@
     ],
     "title": "2026년 한국 거주자를 위한 절세형 현금흐름 점검: 금융소득·연금·ISA 구조 이해하기",
     "excerpt": "금융소득종합과세 기준, 연금계좌·ISA 한도와 세율을 구체적인 숫자로 정리하고, 올해 안에 점검할 수 있는 절세·현금흐름 체크리스트를 제시한다. 확정 세금 절감액을 보장하기보다, 구조를 이해하고 스스로 계산하는 방법에 초점을 둔다.",
-    "image": "/assets/images/fixed-costs-cover.jpg",
-    "alt": "고정비와 월간 예산을 점검하는 생활 금융 사진",
+    "image": "/assets/images/thumbnail-budget-calendar.svg",
+    "alt": "절세 계좌와 월간 예산을 정리하는 캘린더 일러스트",
     "url": "/posts/2026-11-14-korean-tax-efficient-cashflow-planning-2026.html"
   },
   {
@@ -21,8 +21,8 @@
     ],
     "title": "2026년 나스닥100 밸류에이션 점검: PER·매출 성장률로 보는 미국 기술주 부담 수준",
     "excerpt": "나스닥100 지수의 최근 수준, 선행 PER, 주요 기술주의 매출 성장률을 기반으로 미국 기술주에 대한 기대와 부담 요인을 함께 점검한다. 구체적인 매수·매도 타이밍이 아니라, 현재 숫자를 해석하는 틀과 체크리스트를 제시한다.",
-    "image": "/assets/images/buja-market-illustration.png",
-    "alt": "미국 기술주와 시장 차트를 살펴보는 재테크 일러스트",
+    "image": "/assets/images/thumbnail-nasdaq-chip.svg",
+    "alt": "나스닥 기술주와 반도체 회로를 보여주는 일러스트",
     "url": "/posts/2026-11-14-nasdaq100-valuation-and-us-tech-checklist-2026.html"
   },
   {
@@ -34,8 +34,8 @@
     ],
     "title": "2025년 코스피 이익·배당 전망 점검: PER·배당수익률로 보는 현재 위치",
     "excerpt": "2026년 11월 14일 기준 코스피 지수, 예상 PER, 배당수익률을 기반으로 2025년 수익·배당 여력을 점검한다. 개별 종목 매수가 아니라, 지수 수준에서 위험과 점검 포인트를 체크하는 데 초점을 둔다.",
-    "image": "/assets/images/finance-growth.svg",
-    "alt": "시장 사이클과 자산 성장을 보여주는 금융 일러스트",
+    "image": "/assets/images/thumbnail-kospi-lighthouse.svg",
+    "alt": "국내 주식시장 흐름과 등대형 지표를 보여주는 일러스트",
     "url": "/posts/2026-11-14-kospi-2025-earnings-and-dividend-checklist.html"
   },
   {
@@ -48,8 +48,8 @@
     ],
     "title": "2026년 절세·현금흐름 설계: ISA와 금융소득 과세 구간 점검하기",
     "excerpt": "2026년 기준 개인종합자산관리계좌(ISA) 비과세 한도와 금융소득 과세 기준 금액을 활용해 절세와 현금흐름을 함께 설계하는 방법을 정리합니다. 실제 숫자 예시와 함께 연간 이자·배당 계획을 점검할 수 있는 체크리스트를 제공합니다.",
-    "image": "/assets/images/isa-cover.jpg",
-    "alt": "ISA와 연금저축 절세 전략을 비교하는 금융 계획 사진",
+    "image": "/assets/images/thumbnail-cashflow-river.svg",
+    "alt": "현금흐름과 자산 성장을 표현한 강 일러스트",
     "url": "/posts/2026-11-13-korea-tax-efficient-cashflow-2026-11.html"
   },
   {
@@ -74,8 +74,8 @@
     ],
     "title": "2026년 11월 코스피 밸류에이션 점검: PER·배당수익률로 보는 현재 위치",
     "excerpt": "2026년 11월 13일 기준 코스피 지수, PER, 배당수익률을 활용해 한국 주식시장의 밸류에이션 위치를 점검합니다. 지표 해석과 함께 개인 투자자가 직접 계산해볼 수 있는 간단한 체크리스트를 제시합니다.",
-    "image": "/assets/images/buja-market-illustration.png",
-    "alt": "국내외 시장 흐름을 살펴보는 재테크 일러스트",
+    "image": "/assets/images/thumbnail-dividend-sprout.svg",
+    "alt": "배당과 자산 성장을 표현한 새싹 일러스트",
     "url": "/posts/2026-11-13-korea-stock-market-valuation-check-2026-11.html"
   },
   {
@@ -88,8 +88,8 @@
     ],
     "title": "연말까지 한 달 반, 연금저축·IRP 세액공제 숫자부터 확인하세요",
     "excerpt": "국세청 공개 기준으로 연금저축과 IRP의 세액공제 한도와 연말 점검 순서를 정리합니다.",
-    "image": "/assets/images/retirement-cover.jpg",
-    "alt": "연금저축과 장기 자산관리를 계획하는 금융 사진",
+    "image": "/assets/images/thumbnail-pension-clock.svg",
+    "alt": "연금과 연말 절세 계획을 표현한 시계 일러스트",
     "url": "/posts/2026-11-12-year-end-pension-tax-check.html"
   },
   {
