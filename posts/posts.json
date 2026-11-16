@@ -1,5 +1,44 @@
 [
   {
+    "date": "2026-11-16T13:30:02.221842+09:00",
+    "category": "절세 · 현금흐름관리",
+    "categories": [
+      "절세",
+      "현금흐름"
+    ],
+    "title": "2026년을 위한 배당 절세·현금흐름 계획 세우기",
+    "excerpt": "2026년을 앞두고 국내 배당소득 세율 구조와 금융소득종합과세 기준을 숫자로 정리합니다. 단순 이론이 아니라, 배당 시기·계좌 분산 등 실무적인 점검표를 제공합니다.",
+    "image": "/assets/images/tax-refund-cover.jpg",
+    "alt": "연봉과 세액공제를 계산하는 금융 사진",
+    "url": "/posts/2026-11-16-korean-tax-efficient-dividend-planning-2026.html"
+  },
+  {
+    "date": "2026-11-16T13:30:02.221842+09:00",
+    "category": "해외주식 · 나스닥",
+    "categories": [
+      "해외주식",
+      "투자"
+    ],
+    "title": "마이크로소프트 2025회계연도 1분기 실적과 현금흐름 점검",
+    "excerpt": "마이크로소프트 2025회계연도 1분기(2024년 9월 분기) 실적과 현금흐름을 중심으로, 숫자로 확인 가능한 부분을 정리합니다. 단기 전망보다 실적 구조와 체크리스트에 초점을 둡니다.",
+    "image": "/assets/images/nasdaq-volatility-cover.jpg",
+    "alt": "나스닥 변동성과 시장 폭을 보여주는 금융 사진",
+    "url": "/posts/2026-11-16-microsoft-2025-q1-fy-results-cashflow.html"
+  },
+  {
+    "date": "2026-11-16T13:30:02.221842+09:00",
+    "category": "국내주식 · 시장분석",
+    "categories": [
+      "국내주식",
+      "투자"
+    ],
+    "title": "한국전력 2024년 3분기 실적과 전기요금 구조 점검",
+    "excerpt": "한국전력 2024년 3분기 실적과 전기요금 구조를 중심으로, 적자 축소의 의미와 투자 전 점검해야 할 재무 지표를 정리합니다. 숫자 중심으로 확인 가능한 부분만 짚고, 단순 전망 대신 체크리스트를 제공합니다.",
+    "image": "/assets/images/korean-stocks-cover.jpg",
+    "alt": "국내주식과 반도체 시장을 분석하는 금융 사진",
+    "url": "/posts/2026-11-16-korea-electric-power-2024-q3-analysis.html"
+  },
+  {
     "date": "2026-11-15T09:00:00+09:00",
     "category": "기타 재테크 · 절세",
     "categories": [
