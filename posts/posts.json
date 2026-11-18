@@ -1,5 +1,44 @@
 [
   {
+    "date": "2026-11-18T14:42:03.481226+09:00",
+    "category": "절세 · 현금흐름 관리",
+    "categories": [
+      "절세",
+      "재테크 기초"
+    ],
+    "title": "2024년 한국 배당·예금 이자 절세 구조와 개인 체크리스트",
+    "excerpt": "2024년 기준 국내 배당·예금 이자에 적용되는 세율과 분리과세 한도를 정리했다. 실제로 활용할 수 있는 계좌 배분·세후 수익률 계산 예시와 함께, 무리한 절세 전략의 위험 요인도 짚어본다.",
+    "image": "/assets/images/fixed-costs-cover.jpg",
+    "alt": "고정비와 월간 예산을 점검하는 생활 금융 사진",
+    "url": "/posts/2026-11-18-korean-tax-efficient-dividend-planning-2024.html"
+  },
+  {
+    "date": "2026-11-18T14:42:03.481226+09:00",
+    "category": "해외주식 · 나스닥",
+    "categories": [
+      "해외주식",
+      "투자"
+    ],
+    "title": "나스닥 대형 기술주 2024년 3분기 영업이익률·잉여현금흐름 점검",
+    "excerpt": "나스닥 대표 기술주의 2024년 3분기 실적에서 영업이익률과 잉여현금흐름을 중심으로 핵심 숫자를 정리했다. 장기 투자자가 활용할 수 있는 간단한 체크포인트와 계산 예시를 함께 제시한다.",
+    "image": "/assets/images/nasdaq-cover.jpg",
+    "alt": "나스닥 기술주 시장을 분석하는 트레이딩 데스크 사진",
+    "url": "/posts/2026-11-18-nasdaq-q3-2024-big-tech-margin-free-cashflow.html"
+  },
+  {
+    "date": "2026-11-18T14:42:03.481226+09:00",
+    "category": "국내주식 · 시장분석",
+    "categories": [
+      "국내주식",
+      "투자"
+    ],
+    "title": "2024년 3분기 국내 은행주 ROE·배당 점검과 체크리스트",
+    "excerpt": "국내 주요 은행주의 2024년 3분기 ROE와 배당 성향을 공식 공시 기준으로 정리했다. 숫자만 보는 대신 개인 투자자가 직접 점검할 수 있는 체크리스트와 간단한 배당 계산 예시를 제시한다.",
+    "image": "/assets/images/korean-stocks-cover.jpg",
+    "alt": "국내주식과 반도체 시장을 분석하는 금융 사진",
+    "url": "/posts/2026-11-18-korean-banks-roe-dividend-2024-q3-checklist.html"
+  },
+  {
     "date": "2026-11-17T15:15:22.024807+09:00",
     "category": "기타 재테크 · 절세",
     "categories": [
