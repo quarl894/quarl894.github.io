@@ -1,5 +1,44 @@
 [
   {
+    "date": "2026-11-22T13:48:36.766924+09:00",
+    "category": "기타 재테크 · 절세",
+    "categories": [
+      "절세",
+      "재테크 기초"
+    ],
+    "title": "2027년을 대비한 절세형 현금흐름 설계: 연금·IRP·ISA 점검표",
+    "excerpt": "2027년을 앞두고 한국 거주자가 점검할 수 있는 연금저축·IRP·ISA의 절세 한도와 현금흐름 설계 방법을 정리합니다. 실제 세액공제 금액 계산 예시와 함께 체크리스트를 제공합니다.",
+    "image": "/assets/images/fixed-costs-cover.jpg",
+    "alt": "고정비와 월간 예산을 점검하는 생활 금융 사진",
+    "url": "/posts/2026-11-22-korean-tax-efficient-cashflow-planning-2027.html"
+  },
+  {
+    "date": "2026-11-22T13:48:36.766924+09:00",
+    "category": "해외주식 · 나스닥",
+    "categories": [
+      "해외주식",
+      "투자"
+    ],
+    "title": "애플(AAPL) 2026 회계연도 4분기 실적과 현금흐름 점검",
+    "excerpt": "애플의 2026 회계연도 4분기 실적과 핵심 현금흐름 지표를 간단한 계산 예시와 함께 정리합니다. 나스닥 대형주를 볼 때 응용 가능한 체크포인트도 함께 제공합니다.",
+    "image": "/assets/images/nasdaq-volatility-cover.jpg",
+    "alt": "나스닥 변동성과 시장 폭을 보여주는 금융 사진",
+    "url": "/posts/2026-11-22-apple-2026-q4-nasdaq-analysis.html"
+  },
+  {
+    "date": "2026-11-22T13:48:36.766924+09:00",
+    "category": "국내주식 · 시장분석",
+    "categories": [
+      "국내주식",
+      "투자"
+    ],
+    "title": "카카오 2026년 3분기 실적 점검과 현금흐름 체크리스트",
+    "excerpt": "카카오의 2026년 3분기 실적과 핵심 숫자를 토대로 수익성·현금흐름을 점검합니다. 개인 투자자가 직접 활용할 수 있는 간단한 체크리스트와 계산 예시를 정리했습니다.",
+    "image": "/assets/images/buja-market-illustration.png",
+    "alt": "국내외 시장 흐름을 살펴보는 재테크 일러스트",
+    "url": "/posts/2026-11-22-kakao-2026-q3-review-and-cashflow-checklist.html"
+  },
+  {
     "date": "2026-11-21T09:00:00+09:00",
     "category": "기타 재테크 · 절세",
     "categories": [
