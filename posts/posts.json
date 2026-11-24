@@ -1,5 +1,44 @@
 [
   {
+    "date": "2026-11-24T17:06:06.357747+09:00",
+    "category": "기타 재테크 · 절세",
+    "categories": [
+      "세금",
+      "투자"
+    ],
+    "title": "2026년 국내 ETF 배당·매매차익 절세 구조 이해하기: 현금흐름 설계 체크리스트",
+    "excerpt": "국내 상장 ETF의 배당소득·매매차익 과세 구조를 2026년 기준 세법으로 정리하고, 세후 현금흐름을 스스로 계산하는 방법을 소개합니다. 동일 수익률이라도 과세 방식에 따라 손에 남는 금액이 어떻게 달라지는지 숫자로 비교합니다.",
+    "image": "/assets/images/tax-refund-cover.jpg",
+    "alt": "연봉과 세액공제를 계산하는 금융 사진",
+    "url": "/posts/2026-11-24-korea-tax-efficient-cashflow-etf-2026-guide.html"
+  },
+  {
+    "date": "2026-11-24T17:06:06.357747+09:00",
+    "category": "해외주식 · 나스닥",
+    "categories": [
+      "해외주식",
+      "투자"
+    ],
+    "title": "2026년 11월 나스닥100(QQQ)·S&amp;P500(SPY) 밸류에이션 점검: PER·상대가치 비교",
+    "excerpt": "2026년 11월 22일 기준 QQQ와 SPY의 시가총액·PER·섹터 비중을 비교해, 미국 대표 인덱스 ETF 투자 전에 스스로 체크할 지표들을 정리했습니다. 지수 전망이 아니라 현재 밸류에이션 위치와 간단한 기대수익률 계산 예시를 제공합니다.",
+    "image": "/assets/images/nasdaq-cover.jpg",
+    "alt": "나스닥 기술주 시장을 분석하는 트레이딩 데스크 사진",
+    "url": "/posts/2026-11-24-nasdaq-qqq-spy-valuation-2026-pe-check.html"
+  },
+  {
+    "date": "2026-11-24T17:06:06.357747+09:00",
+    "category": "국내주식 · 시장분석",
+    "categories": [
+      "국내주식",
+      "투자"
+    ],
+    "title": "2026년 시가총액 상위 은행주 ROE·배당 체크리스트: KB금융·신한지주를 중심으로",
+    "excerpt": "2026년 3분기 실적을 기준으로 KB금융과 신한지주의 ROE·배당 성향·PBR을 비교해 은행주 투자 시 점검할 핵심 지표를 정리했습니다. 개별 종목 추천이 아니라, 숫자를 스스로 점검하는 방법과 간단한 배당수익률 계산 예시를 제공합니다.",
+    "image": "/assets/images/korean-stocks-cover.jpg",
+    "alt": "국내주식과 반도체 시장을 분석하는 금융 사진",
+    "url": "/posts/2026-11-24-korea-banks-roe-dividend-2026-checklist.html"
+  },
+  {
     "date": "2026-11-23T14:27:35.726234+09:00",
     "category": "절세 · 현금흐름",
     "categories": [
